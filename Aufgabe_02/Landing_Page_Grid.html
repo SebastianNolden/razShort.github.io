@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Engineering</title>
+  <meta name="description" content="Web Page for Web Engineering">
+  <meta name="author" content="Sebastian Nolden">
+  <!--<link rel="stylesheet" href="css/styles.css"> -->
+  <!-- box-sizing: border-box includes border and padding in height and width -->
+  <style>
+  * {
+    box-sizing: border-box;
+    font-family: Source Sans Pro, sans-serif;
+  }
+  .main {
+    background-color: #ebeae6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+  .main .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  header {
+    background-color: #232323;
+    grid-column: 1 / 3;
+    height: 60px;
+  }
+  .content {
+    grid-column: 1 / 3;
+    height: 79.2vh;
+  }
+  .main .headerFlexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 40px;
+    padding-bottom: 4px;
+  }
+  .main .headerText {
+    color: #b7b8b6;
+  }
+  .main .contentTitle {
+    text-align: center;
+    padding: 2vh;
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+  footer {
+    background-color: #011826;
+    grid-column: 1 / 3;
+    text-align: center;
+    width: 100%;
+  }
+  footer .footerText {
+    padding-top: 40px;
+    color: white;
+  }
+  .button{
+    border: none;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    height: 35px;
+    width: 250px;
+    font-family: Bahnschrift, sans-serif;
+  }
+  .button1{
+    background-color: #f88e37;
+    width: 25em;
+    margin: 20px 0px 20px 0px;
+  }
+  .button2{
+    border-radius: 8px;
+    background-color: #f88e37;
+    width: 35em;
+    margin: 20px 0px 20px 0px;
+  }
+  .contentWrapper {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    align-items: center;
+    gap: 2vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  .contentWrapper img{
+    border: 2px solid grey;
+    border-radius: 15px;
+    width: 100%;
+    max-height: 70vh;
+    max-width: 50vh;
+  }
+  .main .contentTextRight {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    align-self: flex-start;
+    padding-top: 10vh;
+  }
+  .main .contentText {
+    align-self: center;
+    text-align: center;
+  }
+  @media screen and (max-width: 700px){
+    .contentWrapper {
+      flex-direction: column;
+    }
+    .footer {
+      grid-row: 4 / 5;
+    }
+    .content {
+      height: 100%;
+    }
+    .main .contentTextRight {
+      display: flex;
+      flex-direction: column;
+      gap: 5vh;
+      align-items: center;
+      align-self: center;
+      padding-bottom: 5vh;
+      padding-top: 4vh;
+    }
+  }
+  @media screen and (max-width: 550px){
+    .main .headerFlexContainer {
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 1vh;
+    }
+    header {
+      height: 12vh;
+    }
+    .main .footerText {
+      padding: 8vw 2vw 0vw 2vw;
+    }
+    .button2 {
+      width: 90%;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="gridContainer">
+      <header>
+        <div class="headerFlexContainer">
+          <div class="headerText">The book series</div>
+          <div class="headerText">Testimonials</div>
+          <div class="headerText">The Author</div>
+          <div class="headerText">Free resources</div>
+        </div>
+      </header>
+      <div class="content">
+        <div class="contentTitle">You dont know JavaScript</div>
+        <div class="contentWrapper">
+          <img src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png" alt="JS Landing">
+          <div class="contentTextRight">
+            <div class="contentText">
+              Don't just drift through Javascript.
+            </div>
+            <div class="contentText">
+              Understand how Javascript works
+            </div>
+            <div class="contentText">
+              Start your journey through the bumpy side of Javascript
+            </div>
+            <button class="button button1"> ORDER YOUR COPY NOW </button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footerText">The first ebook in the book series is absolutely free.</div>
+        <button class="button button2"> FIND OUT MORE ABOUT THIS OFFER </button>
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>

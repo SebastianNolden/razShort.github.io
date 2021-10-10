@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalabe=yes">
+
+  <title>Web Engineering</title>
+  <meta name="description" content="Web Page for Web Engineering">
+  <meta name="author" content="Sebastian Nolden">
+
+  <!--<link rel="stylesheet" href="css/styles.css"> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .flexboxContainer {
+      display: flex;
+      flex-flow: row wrap;
+      left: auto;
+      top: auto;
+      justify-content: flex-start;
+    }
+    .red {
+      background-color: red;
+      flex: 100%;
+      padding: 100px;
+      margin-bottom: 10px;
+    }
+    .green{
+      background-color: green;
+      flex: 19%;
+      padding: 120px;
+      padding-bottom: 400px;
+      margin-right: 10px;
+    }
+    .blue {
+      background-color: blue;
+      flex: 60%;
+      padding: 120px;
+      margin-right: 10px;
+    }
+    .purple {
+      background-color: purple;
+      flex: 19%;
+      padding: 120px;
+    }
+    @media all and (max-width:800px) {
+      .green {
+        margin-right: 2px;
+        margin-bottom: 2px;
+        flex: 29%;
+        padding: 0px;
+        padding-bottom: 700px;
+      }
+      .blue {
+        margin-right: 0px;
+        padding: 0px;
+        padding-bottom: 700px;
+        margin-bottom: 2px;
+        flex: 70%;
+      }
+      .purple {
+        flex: 100%;
+      }
+    }
+    @media all and (max-width: 700px) {
+      .red{
+        margin: 0px;
+      }
+      .blue{
+        flex: 100%;
+        padding-bottom: 1400px;
+        margin: 0px;
+      }
+      .purple{
+        padding: 100px;
+      }
+      .green{
+        padding-bottom: 50px;
+        margin: 0px;
+        padding: 100px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flexboxContainer">
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="purple"></div>
+  </div>
+
+
+
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>
