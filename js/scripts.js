@@ -7,7 +7,7 @@ var userChoiseColorMode = prefersDarkScheme.matches ? "dark" : "light";
 
 var darkmodeSymbol = '<i class="uil uil-moon"></i>';
 var lightmodeSymbol = '<i class="uil uil-sun"></i>';
-
+var darkmodeHTMLSymbol = lightmodeSymbol;
 
 
 /* --------- METHODS ------------- */
@@ -16,10 +16,11 @@ if (currentTheme === null) {
   if (prefersDarkScheme.matches) {
     document.body.classList.toggle("dark-theme");
     localStorage.setItem("theme", "dark");
+    darkmodeHTMLSymbol = darkmodeSymbol;
   }
 }
 
-var darkmodeHTMLSymbol = lightmodeSymbol;
+
 // activates dark theme if user activated dark mode once
 if (currentTheme === "dark") {
   document.body.classList.toggle("dark-theme");

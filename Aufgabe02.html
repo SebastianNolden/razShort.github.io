@@ -9,6 +9,33 @@
   <meta name="description" content="Web Page for Web Engineering">
   <meta name="author" content="Sebastian Nolden">
 
+  <!-- block rendering to set dark/light mode -->
+  <script>
+    var darkmodeButton = document.querySelector(".darkmode");
+    var prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    var currentTheme = localStorage.getItem("theme");
+    var darkmodeSymbol = '<i class="uil uil-moon"></i>';
+    var lightmodeSymbol = '<i class="uil uil-sun"></i>';
+    var darkmodeHTMLSymbol = lightmodeSymbol;
+
+    //first visite on website
+    if (currentTheme === null) {
+      if (prefersDarkScheme.matches) {
+        document.body.classList.toggle("dark-theme");
+        localStorage.setItem("theme", "dark");
+        darkmodeHTMLSymbol = darkmodeSymbol;
+      }
+    }
+
+    // check if dark is in local storage
+    if (currentTheme === "dark"){
+      document.body.classList.toggle("dark-theme");
+      localStorage.setItem("theme", "dark");
+      darkmodeHTMLSymbol = darkmodeSymbol;
+    }
+    darkmodeButton.innerHTML = darkmodeHTMLSymbol;
+  </script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
 
@@ -19,11 +46,13 @@
 
 <body>
 
+<div class="page">
   <nav class="nav">
     <div class="navWrapper">
       <a class="home button" href="index.html">Home</a>
       <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
       <a href="" class="storybook button">Storybook</a>
+      <a href="" class="aboutme button">Über mich</a>
       <a class="darkmode button"><i class="uil uil-moon"></i></a>
     </div>
   </nav>
@@ -36,9 +65,14 @@
       <a href="Aufgabe03.html" class="button">03</a>
     </div>
     <div class="content">
-      B
+      <div class="contentWrapper">
+        <div class="text"><h1>Web Engineering Wintersemester 21/22</h1></div>
+        <div class="text"><h3>Übungspräsentation</h3></div>
+        <div class="text"><h5>von Sebastian Nolden</h5></div>
+      </div>
     </div>
   </div>
+</div>
 
 <!--
   <h1>Aufgabe 1</h1>
