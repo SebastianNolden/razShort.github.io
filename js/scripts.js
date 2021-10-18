@@ -23,6 +23,9 @@ if (currentTheme === null) {
 if (currentTheme === "dark") {
   darkmodeButton.innerHTML = darkmodeSymbol;
 }
+if (currentTheme === "light"){
+  darkmodeButton.innerHTML = lightmodeSymbol;
+}
 
 // darkmode Click-listener
 darkmodeButton.addEventListener("click", function () {
