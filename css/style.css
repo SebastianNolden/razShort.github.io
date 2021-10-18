@@ -59,6 +59,10 @@ nav .button {
   color: var(--text-color);
 }
 
+nav .darkmode {
+  width: 40px;
+}
+
 .mainContainer{
   position: relative;
   display: flex;
