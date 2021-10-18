@@ -20,13 +20,9 @@ if (currentTheme === null) {
   }
 }
 
-
-// activates dark theme if user activated dark mode once
 if (currentTheme === "dark") {
-  document.body.classList.toggle("dark-theme");
-  darkmodeHTMLSymbol = darkmodeSymbol;
+  darkmodeButton.innerHTML = darkmodeSymbol;
 }
-darkmodeButton.innerHTML = darkmodeHTMLSymbol;
 
 // darkmode Click-listener
 darkmodeButton.addEventListener("click", function () {

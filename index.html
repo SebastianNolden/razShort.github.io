@@ -9,14 +9,6 @@
   <meta name="description" content="Web Page for Web Engineering">
   <meta name="author" content="Sebastian Nolden">
 
-  <!-- block rendering to set dark/light mode -->
-  <script>
-    var currentTheme = localStorage.getItem("theme") || 'light';
-    if (currentTheme === "dark"){
-      document.body.classList.toggle("dark-theme");  
-    }
-  </script>
-
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
 
@@ -26,34 +18,45 @@
 </head>
 
 <body>
+  <!-- block rendering to set dark/light mode -->
+  <script>
+    // set the darkmode here to prefent flickering
+    var currentTheme = localStorage.getItem("theme") || 'light';
+    var darkmodeSymbol = '<i class="uil uil-moon"></i>';
+    if (currentTheme === "dark"){
+      console.log("1");
+      document.body.classList.toggle("dark-theme");
+      darkmodeButton.innerHTML = darkmodeSymbol;
+    }
+  </script>
 
-<div class="page">
-  <nav class="nav">
-    <div class="navWrapper">
-      <a class="home button" href="index.html">Home</a>
-      <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
-      <a href="" class="storybook button">Storybook</a>
-      <a href="" class="aboutme button">Über mich</a>
-      <a class="darkmode button"><i class="uil uil-moon"></i></a>
-    </div>
-  </nav>
+  <div class="page">
+    <nav class="nav">
+      <div class="navWrapper">
+        <a class="home button" href="index.html">Home</a>
+        <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
+        <a href="" class="storybook button">Storybook</a>
+        <a href="" class="aboutme button">Über mich</a>
+        <a class="darkmode button"><i class="uil uil-sun"></i></a>
+      </div>
+    </nav>
 
-  <div class="mainContainer">
-    <div class="left">
-      <div class="title">Übungen</div>
-      <a href="Aufgabe01.html" class="button">01</a>
-      <a href="Aufgabe02.html" class="button">02</a>
-      <a href="Aufgabe03.html" class="button">03</a>
-    </div>
-    <div class="content">
-      <div class="contentWrapper">
-        <div class="text"><h1>Web Engineering Wintersemester 21/22</h1></div>
-        <div class="text"><h3>Übungspräsentation</h3></div>
-        <div class="text"><h5>von Sebastian Nolden</h5></div>
+    <div class="mainContainer">
+      <div class="left">
+        <div class="title">Übungen</div>
+        <a href="Aufgabe01.html" class="button">01</a>
+        <a href="Aufgabe02.html" class="button">02</a>
+        <a href="Aufgabe03.html" class="button">03</a>
+      </div>
+      <div class="content">
+        <div class="contentWrapper">
+          <div class="text"><h1>Web Engineering Wintersemester 21/22</h1></div>
+          <div class="text"><h3>Übungspräsentation</h3></div>
+          <div class="text"><h5>von Sebastian Nolden</h5></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <!--
   <h1>Aufgabe 1</h1>
