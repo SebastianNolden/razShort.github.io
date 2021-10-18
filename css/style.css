@@ -5,15 +5,111 @@
 
 body {
   --text-color: #222;
-  --background-color: #fff;
+  --first-bkg-color: #f0f2f5;
+  --second-bkg-color: #fd9644;
+  --third-bkg-color: #f9a32e;
+  --border-color: #f9a32e;
+  --boxshadow-color: #525252;
+  --content-color: #dbdada;
 }
 
 body.dark-theme {
   --text-color: #eee;
-  --background-color: #121212;
+  --first-bkg-color: #313131;
+  --second-bkg-color: #414141;
+  --third-bkg-color: #525252;
+  --border-color: #525252;
+  --boxshadow-color: #313131;
+  --content-color: #414141;
 }
 
 body {
-  background: var(--background-color);
+  background: var(--first-bkg-color);
   color: var(--text-color);
+}
+
+.page {
+  position: absolute;
+  width: 97vw;
+  height: 96%;
+  top: 2vh;
+  left: 1vw;
+  right: 1vw;
+  bottom: 2vh;
+}
+
+nav {
+  background-color: var(--second-bkg-color);
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px -2px var(--boxshadow-color);
+}
+
+nav .navWrapper {
+  display: flex;
+  grid-gap: 2vw;
+  padding: 1rem;
+}
+
+nav .button {
+  border: 1px solid var(--border-color);
+  background-color: var(--third-bkg-color);
+  padding: 0.5em;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.mainContainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 2vh;
+  height: 90%;
+  grid-gap: 1vw;
+}
+
+.mainContainer .left {
+  background-color: var(--content-color);
+  width: 25%;
+  padding: 0.5em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 4px 5px -2px var(--boxshadow-color);
+}
+
+.left .title {
+  text-align: center;
+  margin: 1em 0em 0.5em 0em;
+  font-size: 20px;
+}
+
+.left .button {
+  border: 1px solid var(--border-color);
+  background-color: var(--third-bkg-color);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0.2em;
+  width: 100px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.mainContainer .content {
+  background-color: var(--content-color);
+  width: 75%;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px -2px var(--boxshadow-color);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
