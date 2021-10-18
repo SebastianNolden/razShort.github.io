@@ -53,14 +53,14 @@ nav .navWrapper {
 nav .button {
   border: 1px solid var(--border-color);
   background-color: var(--third-bkg-color);
-  padding: 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
   border-radius: 10px;
   text-decoration: none;
   color: var(--text-color);
 }
 
 nav .darkmode {
-  width: 40px;
+  width: 55px;
 }
 
 .mainContainer{

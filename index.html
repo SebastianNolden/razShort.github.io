@@ -21,6 +21,7 @@
   <!-- block rendering to set dark/light mode -->
   <script>
     // set the darkmode here to prefent flickering
+    var darkmodeButton = document.querySelector(".darkmode");
     var currentTheme = localStorage.getItem("theme") || 'light';
     var darkmodeSymbol = '<i class="uil uil-moon"></i>';
     if (currentTheme === "dark"){
