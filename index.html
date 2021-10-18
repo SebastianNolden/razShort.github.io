@@ -21,12 +21,10 @@
   <!-- block rendering to set dark/light mode -->
   <script>
     // set the darkmode here to prefent flickering
-    var darkmodeButton = document.querySelector(".darkmode");
     var currentTheme = localStorage.getItem("theme") || 'light';
     var darkmodeSymbol = '<i class="uil uil-moon"></i>';
     if (currentTheme === "dark"){
       document.body.classList.toggle("dark-theme");
-      darkmodeButton.innerHTML = darkmodeSymbol;
     }
   </script>
 
@@ -37,16 +35,16 @@
         <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
         <a href="" class="storybook button">Storybook</a>
         <a href="" class="aboutme button">Über mich</a>
-        <a class="darkmode button"></i></a>
+        <a class="darkmode button"><i class="uil uil-moon"></i></a>
       </div>
     </nav>
 
     <div class="mainContainer">
       <div class="left">
         <div class="title">Übungen</div>
-        <a href="Aufgabe01.html" class="button">01</a>
-        <a href="Aufgabe02.html" class="button">02</a>
-        <a href="Aufgabe03.html" class="button">03</a>
+        <a href="" class="button">01</a>
+        <a href="" class="button">02</a>
+        <a href="" class="button">03</a>
       </div>
       <div class="content">
         <div class="contentWrapper">
