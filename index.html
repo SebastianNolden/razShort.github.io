@@ -11,29 +11,10 @@
 
   <!-- block rendering to set dark/light mode -->
   <script>
-    var darkmodeButton = document.querySelector(".darkmode");
-    var prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    var currentTheme = localStorage.getItem("theme");
-    var darkmodeSymbol = '<i class="uil uil-moon"></i>';
-    var lightmodeSymbol = '<i class="uil uil-sun"></i>';
-    var darkmodeHTMLSymbol = lightmodeSymbol;
-
-    //first visite on website
-    if (currentTheme === null) {
-      if (prefersDarkScheme.matches) {
-        document.body.classList.toggle("dark-theme");
-        localStorage.setItem("theme", "dark");
-        darkmodeHTMLSymbol = darkmodeSymbol;
-      }
-    }
-
-    // check if dark is in local storage
+    var currentTheme = localStorage.getItem("theme") || 'light';
     if (currentTheme === "dark"){
-      document.body.classList.toggle("dark-theme");
-      localStorage.setItem("theme", "dark");
-      darkmodeHTMLSymbol = darkmodeSymbol;
+      document.body.classList.toggle("dark-theme");  
     }
-    darkmodeButton.innerHTML = darkmodeHTMLSymbol;
   </script>
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
