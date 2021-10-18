@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  --text-color: #222;
+  --background-color: #fff;
+}
+
+body.dark-theme {
+  --text-color: #eee;
+  --background-color: #121212;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
