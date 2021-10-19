@@ -30,22 +30,24 @@ body {
 
 .page {
   position: absolute;
-  width: 97vw;
+  width: 96vw;
   height: 96%;
   top: 2vh;
-  left: 1vw;
-  right: 1vw;
+  left: 2vw;
+  right: 2vw;
   bottom: 2vh;
 }
 
 nav {
   background-color: var(--second-bkg-color);
+  color: var(--text-color);
   border-radius: 10px;
   box-shadow: 2px 4px 5px -2px var(--boxshadow-color);
 }
 
 nav .navWrapper {
   display: flex;
+  flex-flow: row wrap;
   grid-gap: 2vw;
   padding: 1rem;
 }
@@ -57,6 +59,7 @@ nav .button {
   border-radius: 10px;
   text-decoration: none;
   color: var(--text-color);
+  text-align: center;
 }
 
 .mainContainer{
@@ -70,7 +73,8 @@ nav .button {
 
 .mainContainer .left {
   background-color: var(--content-color);
-  width: 25%;
+  color: var(--text-color);
+  width: 20%;
   padding: 0.5em;
   border-radius: 10px;
   display: flex;
@@ -100,7 +104,8 @@ nav .button {
 
 .mainContainer .content {
   background-color: var(--content-color);
-  width: 75%;
+  color: var(--text-color);
+  width: 80%;
   padding: 0.5em;
   border-radius: 10px;
   box-shadow: 2px 4px 5px -2px var(--boxshadow-color);
@@ -112,4 +117,44 @@ nav .button {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.contentWrapper .text {
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .mainContainer {
+    flex-direction: column;
+    grid-gap: 10px;
+    top: 1.2vh;
+  }
+
+  .mainContainer .left {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .mainContainer .left .button {
+    flex-grow: 1;
+  }
+
+  .left .title {
+    width: 100%;
+    margin: 0.5em 0em 0.5em 0em;
+  }
+
+  .mainContainer .content {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 516px){
+  .navWrapper {
+    justify-content: center;
+  }
 }

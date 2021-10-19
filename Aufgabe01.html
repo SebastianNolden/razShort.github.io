@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Web Engineering</title>
+  <meta name="description" content="Web Page for Web Engineering">
+  <meta name="author" content="Sebastian Nolden">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/Aufgabe01.css">
+  <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+
+  <!-- Error prevention favicon was not found... -->
+  <link rel="shortcut icon" href="#" />
+
+</head>
+
+<body>
+  <!-- block rendering to set dark/light mode -->
+  <script>
+    // set the darkmode here to prefent flickering
+    var currentTheme = localStorage.getItem("theme") || 'light';
+    if (currentTheme === "dark"){
+      document.body.classList.toggle("dark-theme");
+    }
+  </script>
+
+  <div class="page">
+    <nav class="nav">
+      <div class="navWrapper">
+        <a class="home button" href="index.html">Home</a>
+        <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
+        <a href="" class="storybook button">Storybook</a>
+        <a href="" class="aboutme button">Über mich</a>
+        <a href="" class="darkmode button"><i class="uil uil-moon"></i></a>
+      </div>
+    </nav>
+
+    <div class="mainContainer">
+      <div class="left">
+        <div class="title">Übungen</div>
+        <a class="button" id="button01">01</a>
+        <a class="button" id="button02">02</a>
+        <a class="button" id="button03">03</a>
+      </div>
+      <div class="content">
+        <div class="contentWrapper">
+          <div class="top">
+            <h1> Dr. Norman Borlaug </h1>
+            <div class="text">The man who saved a billion lives</div>
+            <img src=https://kaul.inf.h-brs.de/wem/assets/img/tribute-img.png alt="Männer">
+          </div>
+
+          <div class="outside">
+            <center> <h1> Survey Form </h1></center>
+            <div class="inside">
+              <center> Let us know how we can improve WebSurveyForm </center>
+              <br>
+              <table>
+                <tr>
+                  <td class="surveyText">
+                    * Name:
+                  </td>
+                  <td class="surveyItem">
+                    <input class="eingabe" type="text" placeholder="Enter your name" size=40>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyText">
+                    <div class="text"> * Email:</div>
+                  </td>
+                  <td class="surveyItem">
+                    <input class="eingabe" type="text" placeholder="Enter your Email" size=40>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyText">
+                    <div class="text"> * Age:</div>
+                  </td>
+                  <td class="surveyItem">
+                    <input class="eingabe" type="number" placeholder="Age" size=40>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyTextTop">
+                    <div class="text"> Which option best descripes your current role?
+                    </div>
+                  </td>
+                  <td class="surveyItem">
+                    <select id="role" name="role">
+                      <option value="student">Student</option>
+                      <option value="proff">Proff</option>
+                      <option value="student">Student</option>
+                      <option value="student">Student</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyTextTop">
+                    <div class="text"> * How likely is that you would recommend <br> WebSurveyForm to a friend?</div>
+                  </td>
+                  <td class="surveyItem">
+                    <input type="radio" id="r0" name="option" value="0">
+                    <label for="0">Definitely</label><br>
+                    <input type="radio" id="r1" name="option" value="1">
+                    <label for="0">Definitely</label><br>
+                    <input type="radio" id="r2" name="option" value="2">
+                    <label for="0">Definitely</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyTextTop">
+                    What do you like most in FCC:
+                  </td>
+                  <td class="surveyItem">
+                    <select id="option" name="option">
+                      <option value="">Select an option</option>
+                      <option value="Option1">Option1</option>
+                      <option value="Option2">Option2</option>
+                      <option value="Option3">Option3</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="surveyTextTop">
+                    <div class="text"> Things that should be improved in the future <br> (Check all that apply)</div>
+                  </td class="surveyItem">
+                  <td class="surveyItem">
+                    <input type="checkbox" id="c0" name="option" value="0">
+                    <label for="0">Front-end Projects</label><br>
+                    <input type="checkbox" id="c1" name="option" value="1">
+                    <label for="0">Back-end Projects</label><br>
+                    <input type="checkbox" id="c2" name="option" value="2">
+                    <label for="0">Data Visualization</label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="main">
+            <div class="gridContainer">
+              <header>
+                <div class="headerFlexContainer">
+                  <div class="headerText">The book series</div>
+                  <div class="headerText">Testimonials</div>
+                  <div class="headerText">The Author</div>
+                  <div class="headerText">Free resources</div>
+                </div>
+              </header>
+              <div class="mainContent">
+                <div class="contentTitle">You dont know JavaScript</div>
+                <div class="contentWrapper">
+                  <img src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png" alt="JS Landing">
+                  <div class="contentTextRight">
+                    <div class="contentText">
+                      Don't just drift through Javascript.
+                    </div>
+                    <div class="contentText">
+                      Understand how Javascript works
+                    </div>
+                    <div class="contentText">
+                      Start your journey through the bumpy side of Javascript
+                    </div>
+                    <button class="button button1"> ORDER YOUR COPY NOW </button>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                <div class="footerText">The first ebook in the book series is absolutely free.</div>
+                <button class="button button2"> FIND OUT MORE ABOUT THIS OFFER </button>
+              </footer>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/scripts.js" type="text/JavaScript"></script>
+  <script src="js/Aufgabe01.js" type="text/JavaScript"></script>
+</body>
+</html>
