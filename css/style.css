@@ -68,6 +68,7 @@ nav .button {
   flex-direction: row;
   top: 2vh;
   height: auto;
+  min-height: 90%;
   grid-gap: 1vw;
 }
 
