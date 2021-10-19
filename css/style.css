@@ -67,7 +67,7 @@ nav .button {
   display: flex;
   flex-direction: row;
   top: 2vh;
-  height: 90%;
+  height: auto;
   grid-gap: 1vw;
 }
 
