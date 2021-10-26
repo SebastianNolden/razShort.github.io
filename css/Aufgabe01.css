@@ -96,7 +96,7 @@
   width: 35em;
   margin-top: 0.5em;
 }
-.main .contentWrapper {
+.main .contentWrapper1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -106,7 +106,7 @@
   padding-left: 1vh;
   padding-right: 1vh;
 }
-.main .contentWrapper img{
+.main .contentWrapper1 img{
   border: 2px solid grey;
   border-radius: 15px;
   width: 20%;
