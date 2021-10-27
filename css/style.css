@@ -38,6 +38,10 @@ body {
   bottom: 2vh;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 nav {
   background-color: var(--second-bkg-color);
   color: var(--text-color);
@@ -155,7 +159,7 @@ nav .button {
   }
 
   .mainContainer .contentWrapper {
-    height: 70vh;
+    height: 100%;
   }
 }
 

@@ -1,0 +1,52 @@
+.mainContainer .contentWrapper {
+  display: block;
+}
+
+.contentWrapper .Einkaufsliste {
+  display: block;
+  padding: 5px;
+}
+
+.Einkaufsliste .Eingabe {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 5px;
+}
+
+.Einkaufsliste .EingabeText {
+  font-size: 20px;
+}
+
+.Einkaufsliste .listText {
+  font-size: 20px;
+}
+
+#itemList li{
+  margin: 5px 0px;
+}
+
+.Einkaufsliste .ItemWrapper{
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.Einkaufsliste .button {
+  border: thin solid var(--text-color);
+  padding: 3px 5px 2px 5px;
+}
+
+.Einkaufsliste .button:hover {
+  background-color: var(--third-bkg-color);
+}
+
+.Einkaufsliste .listText {
+  margin-right: 0.5em;
+}
+
+.Einkaufsliste #ItemInput {
+  border: thin solid var(--text-color);
+  height: 1.8em;
+  outline: none;
+}
