@@ -48,7 +48,10 @@ deleteAll.addEventListener("click", function(){
 });
 
 function loadSavedItems(){
-  allItems = localStorage.getItem('list');
+  var allItems = localStorage.getItem('list');
+  if (allItems === null) {
+    return;
+  }
   var array = allItems.split(";");
   /* if there is no saved Data no loading is needed */
   if (array[0] === "") {
@@ -62,13 +65,13 @@ function loadSavedItems(){
 }
 
 function saveIteminLocalStorage(item){
-  allItems = localStorage.getItem('list');
+  var allItems = localStorage.getItem('list');
   allItems += (item + ";");
   localStorage.setItem('list', allItems);
 }
 
 function deleteItemfromLocalStorage(item){
-  allItems = localStorage.getItem('list');
+  var allItems = localStorage.getItem('list');
   if (allItems.indexOf(item) > -1) {
     allItems = allItems.replace((item + ";"), "");
   }
@@ -100,5 +103,6 @@ function createAndAddListItem(item){
 
   list.append(li);
 }
+
 
 /* ------ Rednerliste ------ */
