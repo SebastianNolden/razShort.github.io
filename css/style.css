@@ -105,6 +105,7 @@ nav .button {
   text-decoration: none;
   color: var(--text-color);
   text-align: center;
+  user-select: none;
 }
 
 .mainContainer .content {

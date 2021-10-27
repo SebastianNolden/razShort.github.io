@@ -36,6 +36,7 @@
   border: thin solid var(--text-color);
   padding: 3px 5px 2px 5px;
   user-select: none;
+  background-color: var(--second-bkg-color);
 }
 
 .Einkaufsliste .button:hover {
