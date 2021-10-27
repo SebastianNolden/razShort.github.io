@@ -40,6 +40,8 @@ addButton.addEventListener("click", function(){
   }
   saveIteminLocalStorage(inputField.value);
   createAndAddListItem(inputField.value);
+
+  inputField.value = "";
 });
 
 deleteAll.addEventListener("click", function(){
@@ -66,7 +68,11 @@ function loadSavedItems(){
 
 function saveIteminLocalStorage(item){
   var allItems = localStorage.getItem('list');
-  allItems += (item + ";");
+  if (allItems) {
+    allItems += (item + ";");
+  } else {
+    allItems = (item + ";");
+  }
   localStorage.setItem('list', allItems);
 }
 
@@ -97,7 +103,7 @@ function createAndAddListItem(item){
   li.append(itemWrapper);
 
   itemButton.addEventListener("click", function(){
-    deleteItemfromLocalStorage(inputField.value);
+    deleteItemfromLocalStorage(item);
     li.remove();
   });
 
