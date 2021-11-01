@@ -91,3 +91,7 @@
   outline: none;
   width: 100%;
 }
+
+.tabelle .tabellenText {
+  margin-bottom: 10px;
+}

@@ -559,7 +559,8 @@ function elements(x,y){
 }
 
 function calcFunc(func, index, value){
-  value = value ? value : 0;
+  var start = func === _mul ? 1 : func === _div ? 1 : 0;
+  value = value ? value : start;
   if (index.length === 1) {
     var first = parseFloat(document.getElementById(index[0]).value);
     return func(first, value);
