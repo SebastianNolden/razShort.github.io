@@ -7,7 +7,7 @@
 }
 
 .contentWrapper .Einkaufsliste {
-  display: none;
+  display: block;
   padding: 5px;
 }
 
@@ -66,7 +66,8 @@
 }
 
 .content .tabelle {
-  display: block;
+  display: none;
+  padding: 1em;
 }
 
 .tabelle .tableWrapper {

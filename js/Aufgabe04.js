@@ -4,8 +4,10 @@ var home = document.querySelector(".home");
 /* Unteraufgaben & zugehörige Buttons */
 var firstExercise = document.querySelector(".Einkaufsliste");
 var secondExercise = document.querySelector(".Rednerliste");
+var thirdExercise = document.querySelector(".tabelle");
 var button01 = document.getElementById("button01");
 var button02 = document.getElementById("button02");
+var button03 = document.getElementById("button03");
 
 
 /* --------- METHODS ------------- */
@@ -16,6 +18,7 @@ setActiveButtonBackground(button01);
 button01.addEventListener("click", function () {
   firstExercise.style.display = "block";
   secondExercise.style.display = "none";
+  thirdExercise.style.display = "none";
   setNormalBackgroundForMenuButtons();
   setActiveButtonBackground(button01);
 });
@@ -23,8 +26,17 @@ button01.addEventListener("click", function () {
 button02.addEventListener("click", function () {
   firstExercise.style.display = "none";
   secondExercise.style.display = "block";
+  thirdExercise.style.display = "none";
   setNormalBackgroundForMenuButtons();
   setActiveButtonBackground(button02);
+});
+
+button03.addEventListener("click", function () {
+  firstExercise.style.display = "none";
+  secondExercise.style.display = "none";
+  thirdExercise.style.display = "block";
+  setNormalBackgroundForMenuButtons();
+  setActiveButtonBackground(button03);
 });
 
 
@@ -32,6 +44,7 @@ function setNormalBackgroundForMenuButtons(){
   var backgroundColor = window.getComputedStyle(home).getPropertyValue('background-color');
   button01.style.background = backgroundColor;
   button02.style.background = backgroundColor;
+  button03.style.background = backgroundColor;
 }
 
 function setActiveButtonBackground(button){
