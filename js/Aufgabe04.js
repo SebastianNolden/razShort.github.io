@@ -60,14 +60,16 @@ if (einkaufsListeStyle !== "none") {
 }
 
 addButton.addEventListener("click", function(){
-  handleInput(inputField, createAndAddListItem);
+  handleInput(inputField, createAndAddListItem, false);
   saveIteminLocalStorage(inputField.value);
+  inputField.value = "";
 });
 
-inputField.addEventListener("keyup", ({key}) => {
+inputField.addEventListener("keyup", function({key}) {
   if (key === "Enter") {
-    handleInput(inputField, createAndAddListItem);
+    handleInput(inputField, createAndAddListItem, false);
     saveIteminLocalStorage(inputField.value);
+    inputField.value = "";
   }
 });
 
@@ -152,12 +154,12 @@ var id = 0;
 
 /* --------- METHODS ------------- */
 addButtonRedner.addEventListener("click", function(){
-  handleInput(inputFieldRedner, createAndAddRednerListItem);
+  handleInput(inputFieldRedner, createAndAddRednerListItem, true);
 });
 
 inputFieldRedner.addEventListener("keyup", ({key}) => {
   if (key === "Enter") {
-    handleInput(inputFieldRedner, createAndAddRednerListItem);
+    handleInput(inputFieldRedner, createAndAddRednerListItem, true);
   }
 });
 
@@ -170,12 +172,14 @@ deleteAllRedner.addEventListener("click", function(){
   sub.removeAll();
 });
 
-function handleInput(input, func) {
+function handleInput(input, func, deleteInputValue) {
   if (input.value.length === 0) {
     return;
   }
   func(input.value);
-  input.value = "";
+  if (deleteInputValue) {
+    input.value = "";
+  }
 }
 
 function createAndAddRednerListItem(item){
@@ -337,4 +341,219 @@ function stopwatch(elem, button, id, delay){
   this.stop = stop;
   this.reset = reset;
   this.id = id;
+}
+
+/* ------ Tabellenkalkulation ------ */
+/* --------- VARIABLES ------------- */
+var allInput = document.querySelectorAll(".tablecolumn");
+const _add = (x,y) => x+y;
+const _sub = (x,y) => x-y;
+const _mul = (x,y) => x*y;
+const _div = (x,y) => x/y;
+const _square = x => x*x;
+const _root = x => Math.sqrt(x);
+
+
+/* --------- METHODS ------------- */
+for (var i = 0; i < allInput.length; i++) {
+  allInput[i].func = function(){};
+  allInput[i].index = [];
+  allInput[i].inputString = "";
+
+  allInput[i].addEventListener("focusout", function() {
+    parse(this);
+    update(this.id);
+  });
+
+  allInput[i].addEventListener("focus", function(){
+    printFunction(this);
+  });
+}
+
+function printFunction(input){
+  if (input.inputString) {
+    input.value = input.inputString;
+  }
+}
+
+function update(currentID, startID){
+  if (currentID === startID) {
+    return;
+  }
+
+  startID = startID ? startID : currentID;
+  var value = 0;
+
+  for (var i = 0; i < allInput.length; i++) {
+    if (allInput[i].index.indexOf(currentID) >= 0){
+      if (allInput[i].func.binary) {
+        var tmpIndex = []
+        for (var j = 0; j < allInput[i].index.length; j++) {
+          tmpIndex.push(allInput[i].index[j]);
+        }
+        value = calcFunc(allInput[i].func.f, tmpIndex);
+      } else {
+        value = allInput[i].func.f(
+          parseFloat(document.getElementById(allInput[i].index).value)
+        );
+      }
+      allInput[i].value = value;
+      update(allInput[i].id, startID);
+    }
+  }
+}
+
+function parse(input){
+  var value = input.value;
+  var indexOfEqual = value.indexOf('=');
+  var indexOfOpenBrackets = value.indexOf("(");
+  var indexOfClosedBrackets = value.indexOf(")");
+  var indexOfComma = value.indexOf(",");
+  var indexOfColon = value.indexOf(":");
+
+  input.index = [];
+  input.func = function(){};
+  input.inputString = "";
+
+  if (indexOfEqual === -1 || indexOfEqual > 0 || indexOfClosedBrackets !== (value.length - 1)
+      || indexOfOpenBrackets === -1 || indexOfClosedBrackets === -1) {
+    return;
+  }
+
+  var funcName = value.substring(indexOfEqual + 1, indexOfOpenBrackets);
+  var func = getFunction(funcName);
+  var val = 0;
+  var index = [];
+
+  if (func) {
+    if (func.binary) {
+      /*binary function*/
+      if (indexOfComma === -1 && indexOfColon === -1) {
+        return;
+      }
+      var seperator = indexOfComma === -1 ? ":" : ",";
+      index = getIndex(indexOfOpenBrackets + 1, indexOfClosedBrackets, value, seperator);
+      var tmpIndex = [];
+      for (var i = 0; i < index.length; i++) {
+        tmpIndex.push(index[i]);
+      }
+      val = calcFunc(func.f, tmpIndex);
+
+    } else {
+      /*unary function*/
+      if (indexOfComma !== -1 || indexOfColon !== -1) {
+        return;
+      }
+      index = value.substring(indexOfOpenBrackets + 1, indexOfClosedBrackets);
+      val = func.f(parseFloat(document.getElementById(index).value));
+    }
+
+    input.func = func;
+    input.index = index;
+    input.inputString = input.value;
+
+    input.value = val;
+  }
+
+}
+
+function getFunction(name){
+  switch (name) {
+    case "SUM": return { f: _add, binary: true}; break;
+    case "SUB": return { f: _sub, binary: true}; break;
+    case "MUL": return { f: _mul, binary: true}; break;
+    case "DIV": return { f: _div, binary: true}; break;
+    case "SQUARE": return { f: _square, binary: false}; break;
+    case "ROOT": return { f: _root, binary: false}; break;
+    default:
+      return undefined;
+  }
+}
+
+function getIndex(start, end, value, seperator){
+  var subString = value.substring(start, end);
+  if (seperator === ",") {
+    var array = subString.split(seperator);
+    return array;
+  } else {
+    var firstElem = subString.substring(0, subString.indexOf(":"));
+    var lastElem = subString.substring(subString.indexOf(":") + 1, subString.length);
+    var allElem = [];
+    if(!firstElem[1] || !lastElem[1]){
+      return null;
+    }
+    if (firstElem[0] === lastElem[0]) {
+      if (parseInt(firstElem[1]) > parseInt(lastElem[1])) {
+        var tmp = firstElem;
+        firstElem = lastElem;
+        lastElem = tmp;
+      }
+      allElem.push(firstElem);
+      var num = parseInt(firstElem[1]) + 1;
+      for (var i = num; i < lastElem[1]; i++) {
+        var newElem = firstElem[0] + i;
+        allElem.push(newElem);
+      }
+      allElem.push(lastElem);
+      return allElem;
+
+    } else {
+      if (parseInt(firstElem[1]) !== parseInt(lastElem[1])) {
+        return;
+      }
+      var buchstaben = elements(firstElem[0], lastElem[0])
+      for (var i = 0; i < buchstaben.length; i++) {
+        var newElem = buchstaben[i] + firstElem[1];
+        allElem.push(newElem);
+      }
+      return allElem;
+    }
+  }
+}
+
+function elements(x,y){
+  var lib = [
+    { char: 'A', val: 0},
+    { char: 'B', val: 1},
+    { char: 'C', val: 2},
+    { char: 'D', val: 3},
+    { char: 'E', val: 4},
+  ];
+
+  var first;
+  var last;
+  var all = [];
+
+  for (var i = 0; i < lib.length; i++) {
+    if (lib[i].char === x) {
+      first = lib[i];
+    }
+    if (lib[i].char === y) {
+      last = lib[i];
+    }
+  }
+
+  if (first.val > last.val) {
+    var tmp = first;
+    first = last;
+    last = tmp;
+  }
+
+  for (var i = first.val; i < (last.val + 1); i++) {
+    all.push(lib[i].char);
+  }
+  return all;
+}
+
+function calcFunc(func, index, value){
+  value = value ? value : 0;
+  if (index.length === 1) {
+    var first = parseFloat(document.getElementById(index[0]).value);
+    return func(first, value);
+  }
+
+  var first = parseFloat(document.getElementById(index[0]).value);
+  var val = func(first, value);
+  index.shift();
+  return calcFunc(func, index, val);
 }

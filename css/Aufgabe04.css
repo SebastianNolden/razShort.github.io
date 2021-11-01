@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .mainContainer .contentWrapper {
   display: block;
 }
 
 .contentWrapper .Einkaufsliste {
-  display: block;
+  display: none;
   padding: 5px;
 }
 
@@ -59,4 +63,30 @@
   border: thin solid var(--text-color);
   height: 25px;
   outline: none;
+}
+
+.content .tabelle {
+  display: block;
+}
+
+.tabelle .tableWrapper {
+  display: grid;
+  grid-template-columns: 30px repeat(5, 1fr);
+  grid-template-rows: auto;
+}
+
+.tabelle .tableForm {
+  width: auto;
+  border: thin solid var(--text-color);
+}
+
+.tabelle .tablecontent {
+   text-align: center;
+}
+
+.tabelle .tablecolumn {
+  background-color: var(--second-bkg-color);
+  color: var(--text-color);
+  outline: none;
+  width: 100%;
 }
