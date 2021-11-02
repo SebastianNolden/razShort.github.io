@@ -5,9 +5,11 @@ var home = document.querySelector(".home");
 var firstExercise = document.querySelector(".Einkaufsliste");
 var secondExercise = document.querySelector(".Rednerliste");
 var thirdExercise = document.querySelector(".tabelle");
+var fourthExercise = document.querySelector(".ownEditor")
 var button01 = document.getElementById("button01");
 var button02 = document.getElementById("button02");
 var button03 = document.getElementById("button03");
+var button04 = document.getElementById("button04");
 
 
 /* --------- METHODS ------------- */
@@ -19,6 +21,7 @@ button01.addEventListener("click", function () {
   firstExercise.style.display = "block";
   secondExercise.style.display = "none";
   thirdExercise.style.display = "none";
+  fourthExercise.style.display = "none";
   setNormalBackgroundForMenuButtons();
   setActiveButtonBackground(button01);
 });
@@ -27,6 +30,7 @@ button02.addEventListener("click", function () {
   firstExercise.style.display = "none";
   secondExercise.style.display = "block";
   thirdExercise.style.display = "none";
+  fourthExercise.style.display = "none";
   setNormalBackgroundForMenuButtons();
   setActiveButtonBackground(button02);
 });
@@ -35,8 +39,18 @@ button03.addEventListener("click", function () {
   firstExercise.style.display = "none";
   secondExercise.style.display = "none";
   thirdExercise.style.display = "block";
+  fourthExercise.style.display = "none";
   setNormalBackgroundForMenuButtons();
   setActiveButtonBackground(button03);
+});
+
+button04.addEventListener("click", function () {
+  firstExercise.style.display = "none";
+  secondExercise.style.display = "none";
+  thirdExercise.style.display = "none";
+  fourthExercise.style.display = "block";
+  setNormalBackgroundForMenuButtons();
+  setActiveButtonBackground(button04);
 });
 
 
@@ -45,6 +59,7 @@ function setNormalBackgroundForMenuButtons(){
   button01.style.background = backgroundColor;
   button02.style.background = backgroundColor;
   button03.style.background = backgroundColor;
+  button04.style.background = backgroundColor;
 }
 
 function setActiveButtonBackground(button){
@@ -570,4 +585,46 @@ function calcFunc(func, index, value){
   var val = func(first, value);
   index.shift();
   return calcFunc(func, index, val);
+}
+
+
+
+/* ------ Editor ------ */
+/* --------- VARIABLES ------------- */
+var allButtons = document.querySelectorAll(".toolbar a");
+var editor = document.getElementById("editor");
+var inputColors = document.querySelectorAll(".colorInput")
+var editMode = true;
+
+
+/* --------- METHODS ------------- */
+function execCmd(command, value){
+  document.execCommand(command, false, value);
+}
+
+for (var i = 0; i < allButtons.length; i++) {
+  if (allButtons[i].dataset.command) {
+    allButtons[i].addEventListener('click', function(){
+      var args = this.dataset.option;
+      if (this.dataset.command === 'createlink') {
+        args = prompt('Enter a URL', 'https://');
+      }
+      if (this.dataset.command === 'insertimage') {
+        args = prompt('Enter an image URL', '');
+      }
+      if (this.dataset.command === 'fontSize') {
+        args = document.getElementById("editorFontSize").value;
+      }
+      if(this.dataset.command === 'contentEditable'){
+        editMode = !editMode;
+        if (editMode) {
+          this.textContent = "Edit on";
+        } else {
+            this.textContent = "Edit off";
+        }
+        editor.setAttribute("contentEditable", editMode);
+      }
+      execCmd(this.dataset.command, args);
+    });
+  }
 }

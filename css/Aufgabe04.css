@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .mainContainer .contentWrapper {
   display: block;
 }
@@ -94,4 +90,94 @@
 
 .tabelle .tabellenText {
   margin-bottom: 10px;
+}
+
+#editor {
+  box-shadow: 0 0 2px var(--text-color);
+  min-height: 150px;
+  overflow: auto;
+  padding: 1em;
+  margin-top: 20px;
+  resize: vertical;
+  outline: none;
+}
+
+.ownEditor {
+  display: none;
+  padding: 5px;
+}
+
+.ownEditor h1 {
+  text-align: center;
+}
+
+.ownEditor .toolbar {
+  text-align: center;
+}
+
+.toolbar a {
+  border: 1px solid #AAA;
+  background-color: #FFF;
+  font-family: 'Candal';
+  border-radius: 1px;
+  color: black;
+  padding: 10px;
+  width: auto;
+  margin: -3px;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.toolbar a:hover {
+  background-color: #b0b0b0;
+}
+
+a[data-command='redo'],
+a[data-command='strikeThrough'],
+a[data-command='justifyFull'],
+a[data-command='insertOrderedList'],
+a[data-command='outdent'],
+a[data-command='insertParagraph'],
+a[data-command='superscript'] {
+  margin-right: 5px;
+  border-radius: 0 3px 3px 0;
+}
+
+a[data-command='undo'],
+a[data-command='justifyLeft'],
+a[data-command='insertUnorderedList'],
+a[data-command='indent'],
+a[data-command='h1'],
+a[data-command='subscript'] {
+  border-radius: 3px 0 0 3px;
+}
+
+.toolbar .singleButton {
+  border-radius: 3px;
+}
+
+.toolbar .singleButton:hover {
+  border-radius: 3px;
+  background-color: #FFF;
+  cursor: default;
+}
+
+.toolbar #editorFontSize {
+  height: 38px;
+  margin-right: 5px;
+}
+
+.toolbar a[data-command='fontSize'],
+.toolbar a[data-command='contentEditable'] {
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.toolbar input {
+  height: 35px;
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 36px;
 }
