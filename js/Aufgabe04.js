@@ -10,62 +10,48 @@ var button01 = document.getElementById("button01");
 var button02 = document.getElementById("button02");
 var button03 = document.getElementById("button03");
 var button04 = document.getElementById("button04");
+var exerciseArray = [firstExercise, secondExercise, thirdExercise, fourthExercise];
+var buttons = [button01, button02, button03, button04];
 
 
 /* --------- METHODS ------------- */
 /* ------ Unteraufgaben wechseln ------ */
 setNormalBackgroundForMenuButtons();
-setActiveButtonBackground(button01);
+setActiveButtonBackground(0);
 
-button01.addEventListener("click", function () {
-  firstExercise.style.display = "block";
-  secondExercise.style.display = "none";
-  thirdExercise.style.display = "none";
-  fourthExercise.style.display = "none";
+for (var i = 0; i < buttons.length; i++) {
+  addEventClick(buttons[i], i);
+}
+
+function addEventClick(button, value){
+  button.addEventListener('click', () => {
+    clickAufgabenButton(value);
+  });
+}
+
+function clickAufgabenButton(id){
+  for (var j = 0; j < exerciseArray.length; j++) {
+    if (j === id) {
+      exerciseArray[j].style.display = "block";
+    } else {
+      exerciseArray[j].style.display = "none";
+    }
+  }
   setNormalBackgroundForMenuButtons();
-  setActiveButtonBackground(button01);
-});
-
-button02.addEventListener("click", function () {
-  firstExercise.style.display = "none";
-  secondExercise.style.display = "block";
-  thirdExercise.style.display = "none";
-  fourthExercise.style.display = "none";
-  setNormalBackgroundForMenuButtons();
-  setActiveButtonBackground(button02);
-});
-
-button03.addEventListener("click", function () {
-  firstExercise.style.display = "none";
-  secondExercise.style.display = "none";
-  thirdExercise.style.display = "block";
-  fourthExercise.style.display = "none";
-  setNormalBackgroundForMenuButtons();
-  setActiveButtonBackground(button03);
-});
-
-button04.addEventListener("click", function () {
-  firstExercise.style.display = "none";
-  secondExercise.style.display = "none";
-  thirdExercise.style.display = "none";
-  fourthExercise.style.display = "block";
-  setNormalBackgroundForMenuButtons();
-  setActiveButtonBackground(button04);
-});
-
+  setActiveButtonBackground(id);
+}
 
 function setNormalBackgroundForMenuButtons(){
   var backgroundColor = window.getComputedStyle(home).getPropertyValue('background-color');
-  button01.style.background = backgroundColor;
-  button02.style.background = backgroundColor;
-  button03.style.background = backgroundColor;
-  button04.style.background = backgroundColor;
+  for (var i = 0; i < exerciseArray.length; i++) {
+    buttons[i].style.background = backgroundColor;
+  }
 }
 
-function setActiveButtonBackground(button){
+function setActiveButtonBackground(id){
   var body = document.getElementsByTagName("body")[0];
   var color = window.getComputedStyle(body).getPropertyValue('background-color');
-  button.style.background = color;
+  buttons[id].style.background = color;
 }
 
 
@@ -387,6 +373,7 @@ for (var i = 0; i < allInput.length; i++) {
   allInput[i].func = function(){};
   allInput[i].index = [];
   allInput[i].inputString = "";
+  allInput[i].value = "";
 
   allInput[i].addEventListener("focusout", function() {
     parse(this);
@@ -448,7 +435,7 @@ function parse(input){
     return;
   }
 
-  var funcName = value.substring(indexOfEqual + 1, indexOfOpenBrackets);
+  var funcName = value.substring(indexOfEqual + 1, indexOfOpenBrackets).trim();
   var func = getFunction(funcName);
   var val = 0;
   var index = [];
@@ -620,7 +607,7 @@ for (var i = 0; i < allButtons.length; i++) {
         if (editMode) {
           this.textContent = "Edit on";
         } else {
-            this.textContent = "Edit off";
+          this.textContent = "Edit off";
         }
         editor.setAttribute("contentEditable", editMode);
       }
