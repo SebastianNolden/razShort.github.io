@@ -110,7 +110,8 @@ function readTextAndConcatAndDisplayWithPromise(){
     let textB = text[1].split('\r\n');
 
     for (var i = 0; i < textA.length; i++) {
-      newText += `${textA[i]} ${textB[i]}\r\n`;
+      newText += textA[i] + " " + textB[i] + "\r\n";
+      //newText += `${textA[i]} ${textB[i]}\r\n`;
     }
     textFieldConcat.textContent = newText;
   });
@@ -318,7 +319,6 @@ function createLinks(references){
 }
 
 window.addEventListener('popstate', function(e){
-  console.log(e.state);
   if (e.state) {
     loadContent(e.state.parent, e.state.child);
   } else {
