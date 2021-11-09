@@ -106,8 +106,8 @@ function readTextFilesAndDisplayTheirContent(){
 function readTextAndConcatAndDisplayWithPromise(){
   Promise.all(readFiles()).then((text) => {
     let newText = "";
-    let textA = text[0].split('\r\n');
-    let textB = text[1].split('\r\n');
+    let textA = text[0].split('\n');
+    let textB = text[1].split('\n');
 
     console.log(textA);
     console.log(textA[0]);
