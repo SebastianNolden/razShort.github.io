@@ -96,10 +96,9 @@ nav .button {
 .left .button {
   border: 1px solid var(--border-color);
   background-color: var(--third-bkg-color);
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
   margin: 0.2em;
-  width: 100px;
+  padding: 10px;
+  width: 80%;
   border-radius: 10px;
   text-decoration: none;
   color: var(--text-color);
