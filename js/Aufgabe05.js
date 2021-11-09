@@ -109,12 +109,8 @@ function readTextAndConcatAndDisplayWithPromise(){
     let textA = text[0].split('\n');
     let textB = text[1].split('\n');
 
-    console.log(textA);
-    console.log(textA[0]);
-
     for (var i = 0; i < textA.length; i++) {
-      newText += textA[i] + " " + textB[i] + "\r\n";
-      //newText += `${textA[i]} ${textB[i]}\r\n`;
+      newText += `${textA[i]} ${textB[i]}\r\n`;
     }
     textFieldConcat.textContent = newText;
   });
