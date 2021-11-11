@@ -121,8 +121,8 @@ async function readTextAndConcatAndDisplayWithAsync(){
   const rawTextB = await fetch('TextB.txt').then(b => b.text());
 
   let newText = "";
-  let textA = rawTextA.split('\r\n');
-  let textB = rawTextB.split('\r\n');
+  let textA = rawTextA.split('\n');
+  let textB = rawTextB.split('\n');
 
   for (var i = 0; i < textA.length; i++) {
     newText += `${textA[i]} ${textB[i]}\r\n`;
@@ -238,7 +238,7 @@ function isPrime(num){
   return num > 1;
 }
 
-/* ------ Primzahlen ------ */
+/* ------ Navigator ------ */
 /* --------- VARIABLES ------------- */
 var topNavElements = document.getElementById("topNavElements");
 var leftNav = document.getElementById("leftNav");

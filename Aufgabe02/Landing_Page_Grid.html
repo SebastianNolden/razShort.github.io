@@ -3,21 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Engineering</title>
-  <meta name="description" content="Web Page for Web Engineering">
-  <meta name="author" content="Sebastian Nolden">
-  <!--<link rel="stylesheet" href="css/styles.css"> -->
+  <title>landing_page</title>
   <!-- box-sizing: border-box includes border and padding in height and width -->
   <style>
-  * {
-    box-sizing: border-box;
-    font-family: Source Sans Pro, sans-serif;
-  }
   .main {
-    background-color: #ebeae6;
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
     height: auto;
   }
@@ -30,7 +19,7 @@
     grid-column: 1 / 3;
     height: 60px;
   }
-  .content {
+  .cont {
     grid-column: 1 / 3;
     height: 79.2vh;
   }
@@ -62,7 +51,7 @@
     padding-top: 40px;
     color: white;
   }
-  .button{
+  .buttonT{
     border: none;
     color: white;
     border-radius: 3px;
@@ -82,7 +71,7 @@
     width: 35em;
     margin: 20px 0px 20px 0px;
   }
-  .contentWrapper {
+  .contWrap {
     display: flex;
     justify-content: space-around;
     width: auto;
@@ -91,7 +80,7 @@
     padding-left: 1vh;
     padding-right: 1vh;
   }
-  .contentWrapper img{
+  .contWrap img{
     border: 2px solid grey;
     border-radius: 15px;
     width: 100%;
@@ -111,13 +100,13 @@
     text-align: center;
   }
   @media screen and (max-width: 700px){
-    .contentWrapper {
+    .contWrap {
       flex-direction: column;
     }
     .footer {
       grid-row: 4 / 5;
     }
-    .content {
+    .cont {
       height: 100%;
     }
     .main .contentTextRight {
@@ -161,9 +150,9 @@
           <div class="headerText">Free resources</div>
         </div>
       </header>
-      <div class="content">
+      <div class="cont">
         <div class="contentTitle">You dont know JavaScript</div>
-        <div class="contentWrapper">
+        <div class="contWrap">
           <img src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png" alt="JS Landing">
           <div class="contentTextRight">
             <div class="contentText">
@@ -175,13 +164,13 @@
             <div class="contentText">
               Start your journey through the bumpy side of Javascript
             </div>
-            <button class="button button1"> ORDER YOUR COPY NOW </button>
+            <button class="buttonT button1"> ORDER YOUR COPY NOW </button>
           </div>
         </div>
       </div>
       <footer>
         <div class="footerText">The first ebook in the book series is absolutely free.</div>
-        <button class="button button2"> FIND OUT MORE ABOUT THIS OFFER </button>
+        <button class="buttonT button2"> FIND OUT MORE ABOUT THIS OFFER </button>
       </footer>
     </div>
   </div>

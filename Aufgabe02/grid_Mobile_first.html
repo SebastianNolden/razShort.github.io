@@ -5,23 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalabe=yes">
 
-  <title>Web Engineering</title>
-  <meta name="description" content="Web Page for Web Engineering">
-  <meta name="author" content="Sebastian Nolden">
-
-  <!--<link rel="stylesheet" href="css/styles.css"> -->
-
+  <title>grid_mobile_first</title>
   <style>
-  * {
-    box-sizing: border-box;
-  }
   .main {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 500vw;
-    overflow: hidden;
+    width: auto;
+    height: 325vh;
   }
   .gridContainer {
     display: grid;
@@ -53,10 +41,8 @@
       column-gap: 5px;
     }
     .main {
-      top: 2vh;
-      left: 2vw;
-      width: 96vw;
-      height: 150vh;
+      width: auto;
+      height: 100vh;
     }
     .green {
       grid-column: 1 / 2;
@@ -73,10 +59,8 @@
   }
   @media screen and (min-width: 1500px) {
     .main {
-      top: 4vh;
-      left: 4vw;
-      width: 92vw;
-      height: 92vh;
+      width: 100%;
+      height: 100vh;
     }
     .gridContainer {
       grid-template-columns: repeat(5, 1fr);
@@ -111,8 +95,5 @@
     </div>
   </div>
 
-
-
-  <!-- <script src="js/scripts.js"></script> -->
 </body>
 </html>

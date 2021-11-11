@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalabe=yes">
+  <title>flexbox_desktop_first</title>
+  <style>
+    .flexboxContainer {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    .red {
+      background-color: red;
+      width: 100%;
+      height: 20vh;
+    }
+    .green{
+      background-color: green;
+      width: 19%;
+      height: 64vh;
+    }
+    .blue {
+      background-color: blue;
+      width: 60.5%;
+      height: 64vh;
+    }
+    .purple {
+      background-color: purple;
+      width: 19%;
+      height: 64vh;
+    }
+    @media screen and (max-width:1450px) {
+      .red {
+        height: 25vh;
+      }
+      .green {
+        width: 24%;
+        height: 100vh;
+      }
+      .blue {
+        width: 74.5%;
+        height: 100vh;
+      }
+      .purple {
+        width: 100%;
+        height: 25vh;
+      }
+    }
+    @media screen and (max-width:600px) {
+      .flexboxContainer{
+        gap: 0px;
+      }
+      .red{
+        width: 100%;
+      }
+      .blue{
+        width: 100%;
+        height: 125vh;
+      }
+      .green{
+        width: 100%;
+        height: 25vh;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flexboxContainer">
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="purple"></div>
+  </div>
+
+</body>
+</html>
