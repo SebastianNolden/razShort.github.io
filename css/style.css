@@ -138,14 +138,14 @@ nav .button {
 
   .mainContainer .left {
     width: auto;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
-    flex-wrap: wrap;
   }
 
   .mainContainer .left .button {
     flex-grow: 1;
+    width: 200px;
   }
 
   .left .title {
