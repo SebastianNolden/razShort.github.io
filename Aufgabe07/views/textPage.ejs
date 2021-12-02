@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="server.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+  <div id="textArea">
+  <%- locals.text || '' %>
+  </div>
+  <div class="buttonWrapper">
+    <a href="/downloadFile" class="button" id="download">Download File</a>
+  </div>
+  <div class="buttonWrapper">
+    <a href="/" class="button" id="home">Go Back</a>
+  </div>
+
+
+</body>
+</html>

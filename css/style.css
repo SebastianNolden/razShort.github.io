@@ -118,6 +118,10 @@ nav .button {
 }
 
 .mainContainer .contentWrapper {
+  height: 100%;
+}
+
+.mainContainer #titleContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +129,7 @@ nav .button {
   height: 100%;
 }
 
-.contentWrapper .text {
+#titleContent .text {
   text-align: center;
 }
 
@@ -158,7 +162,7 @@ nav .button {
     height: 100%;
   }
 
-  .mainContainer .contentWrapper {
+  .mainContainer #titleContent {
     height: 100%;
   }
 }

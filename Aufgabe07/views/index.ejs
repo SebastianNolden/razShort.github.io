@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="server.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <div id="title">
+    <h3>
+      Laden sie zwei Text Dateien
+    </h3>
+  </div>
+  <form id="upload" method="POST" action="/upload" enctype="multipart/form-data">
+    <label> Wählen Sie zwei Textfiles (*.txt) von Ihrem Rechner aus.
+      <input name="fileName" type="file" size="50" accept=".txt" multiple>
+    </label>
+    <button>Senden</button>
+  </form>
+
+
+  <script src="server.js" type="text/JavaScript"></script>
+
+</body>
+</html>
