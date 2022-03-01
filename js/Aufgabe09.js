@@ -1,14 +1,10 @@
 /* Unteraufgaben & zugehörige Buttons */
 const home = document.querySelector(".home");
 const button01 = document.getElementById("button01");
-const button02 = document.getElementById("button02");
-const button03 = document.getElementById("button03");
 const exerciseArray = [
-  "Aufgabe06/svg_balken.html",
-  "Aufgabe06/svg_bezier.html",
-  "Aufgabe06/svg_Kalli.html",
+  "Aufgabe09/index.html"
 ];
-const buttons = [button01, button02, button03];
+const buttons = [button01];
 
 /* --------- METHODS ------------- */
 /* ------ Unteraufgaben wechseln ------ */

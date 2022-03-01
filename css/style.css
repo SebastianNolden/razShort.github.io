@@ -99,6 +99,7 @@ nav .button {
   margin: 0.2em;
   padding: 10px;
   width: 80%;
+  height: 55px;
   border-radius: 10px;
   text-decoration: none;
   color: var(--text-color);
@@ -133,7 +134,7 @@ nav .button {
   text-align: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .mainContainer {
     flex-direction: column;
     grid-gap: 10px;

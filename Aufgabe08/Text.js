@@ -1,7 +1,15 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
 
 export class Text extends LitElement {
-  static styles = css``;
+  static styles = css`
+    span { 
+      width: 100%;
+      word-wrap:break-word;
+    }
+    h1 {
+      word-wrap:break-word;
+    }
+  `;
 
   static properties = {
     text: {type: String},

@@ -4,8 +4,13 @@ export class Menu extends LitElement {
   static styles = css`
     .menuWrapper {
       display: flex;
+      flex-wrap: wrap;
       gap: 5px;
       text-align: center;
+      justify-content: center;
+    }
+    h1 {
+      word-wrap:break-word;
     }
     .menuWrapperV {
       display: flex;
@@ -14,13 +19,13 @@ export class Menu extends LitElement {
       align-items: center;
     }
     .button {
-      border: thin solid var(--text-color);
+      border: thin solid black;
       padding: 8px;
-      width: 80%;
+      width: 120px;
       text-align: center;
     }
     .button:hover {
-      background-color: var(--third-bkg-color);
+      background-color: grey;
     }
     h1 {
       text-align: center;

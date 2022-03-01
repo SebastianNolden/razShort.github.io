@@ -1,0 +1,34 @@
+body {
+  display: block;
+  width: auto;
+}
+
+#NavigatorWrapper {
+  width: 100%;
+}
+
+.NavCont {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left {
+  width: 160px;
+  max-width: 160px;
+}
+.mid {
+  width: 70%;
+  padding: 12px;
+}
+.right {
+  width: 160px;
+  max-width: 160px;
+}
+
+@media screen and (max-width:410px) {
+  .NavCont {
+    flex-direction: column;
+  }
+  .left, .mid, .right {
+    width: 85%;
+  }
+}

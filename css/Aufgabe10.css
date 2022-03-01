@@ -1,0 +1,33 @@
+.horizontalMenu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.verticalMenu {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonVUE {
+  border: 1px solid var(--border-color);
+  background-color: var(--third-bkg-color);
+  width: auto;
+  margin: 0.2em;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  text-align: center;
+  user-select: none;
+}
+
+#Aufgabe10 h3{
+  text-align: center;
+}
+
+#myMenu {
+  display: none;
+}
