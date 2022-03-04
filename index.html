@@ -20,7 +20,7 @@
 <body>
   <!-- block rendering to set dark/light mode -->
   <script>
-    // set the darkmode here to prefent flickering
+    // set the darkmode here to prevent flickering
     var currentTheme = localStorage.getItem("theme") || 'light';
     if (currentTheme === "dark"){
       document.body.classList.toggle("dark-theme");
@@ -29,13 +29,7 @@
 
   <div class="page">
     <nav class="nav">
-      <div class="navWrapper">
-        <a class="home button" href="index.html">Home</a>
-        <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
-        <a href="" class="storybook button">Storybook</a>
-        <a href="" class="aboutme button">Über mich</a>
-        <a href="" class="darkmode button"><i class="uil uil-moon"></i></a>
-      </div>
+      <my-nav></my-nav>
     </nav>
 
     <div class="mainContainer">
@@ -44,15 +38,14 @@
         <a href="Aufgabe01.html" class="button">HTML & CSS</a>
         <a href="Aufgabe02.html" class="button">Responsives Web</a>
         <a href="Aufgabe03.html" class="button">Javascript</a>
-        <a href="Aufgabe04.html" class="button">Document Object Model</a>
+        <a href="Aufgabe04.html" class="button">DOM</a>
         <a href="Aufgabe05.html" class="button">Asynchron</a>
-        <a href="Aufgabe06.html" class="button">Scalable Vector Graphics</a>
+        <a href="Aufgabe06.html" class="button">SVG</a>
         <a href="Aufgabe07.html" class="button">Node</a>
         <a href="Aufgabe08.html" class="button">Modular Web</a>
-        <a href="Aufgabe09.html" class="button">Progressive Web App</a>
+        <a href="Aufgabe09.html" class="button">PWA</a>
         <a href="Aufgabe10.html" class="button">Vue Framework</a>
-        <a href="" class="button">Exercise 11 - in Progress</a>
-        <a href="" class="button">Exercise 12 - in Progress</a>
+        <a href="Aufgabe11.html" class="button">Web Assembly</a>
       </div>
       <div class="content">
         <div class="contentWrapper">
@@ -66,7 +59,8 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/NavVue.js" type="text/JavaScript"></script>
   <script src="js/scripts.js" type="text/JavaScript"></script>
-  <script src="js/Aufgabe03.js" type="text/JavaScript"></script>
 </body>
 </html>

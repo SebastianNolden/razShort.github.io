@@ -33,15 +33,15 @@
       display: flex;
       flex-wrap: wrap;
     }
-    .left {
+    #left {
       width: 160px;
       max-width: 160px;
     }
-    .mid {
+    #mid {
       width: 70%;
       padding: 12px;
     }
-    .right {
+    #right {
       width: 160px;
       max-width: 160px;
     }
@@ -50,7 +50,7 @@
       .NavCont {
         flex-direction: column;
       }
-      .left, .mid, .right {
+      #left, #mid, #right {
         width: 85%;
       }
     }
@@ -63,8 +63,8 @@
     <my-menu title="Horizontal Menu" alignment="Horizontal" content="Drei,vier,sechs"></my-menu>
     <div class="NavCont">
       <my-menu id="left" title="Vertical Menu" alignment="Vertical" content="Drei,vier,sechs"></my-menu>
-      <my-text class="mid" title="" text="Hier könnte ihr Text stehen."></my-text>
-      <my-text class="right" title="References" text="TestRef"></my-text>
+      <my-text id="mid" title="" text="Hier könnte ihr Text stehen."></my-text>
+      <my-text id="right" title="References" text="TestRef"></my-text>
     </div>
   </div>
 

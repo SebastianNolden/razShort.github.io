@@ -1,6 +1,3 @@
-// man kann wohl eine Zeile angeben um nicht node einzugeben zu müssen
-#!/usr/bin/alpha/node ??? nicht sicher.
-
 const fs = require('fs');
 
 const date = new Date();

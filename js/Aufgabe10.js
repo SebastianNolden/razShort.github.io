@@ -51,12 +51,12 @@ Vue.component('my-textfield', {
 });
 
 Vue.component('my-menu', {
-  props: ["title", "mode"],
+  props: ["title", "mode", "firstlink", "firstlinktext"],
   template: `
     <div>
       <h3>{{title}}</h3>
       <div :class="menu">
-      <a class="buttonVUE">First</a>
+      <a class="buttonVUE" :href="firstlink">{{firstlinktext}}</a>
       <a class="buttonVUE">Second</a>
       <a class="buttonVUE">Third</a>  
       </div>
