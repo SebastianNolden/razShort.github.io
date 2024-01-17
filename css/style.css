@@ -54,7 +54,7 @@ body {
 nav {
   background-color: var(--first-bkg-color);
   margin-top: -32px;
-  padding: 32px;
+  padding: 32px 16px;
   color: var(--text-color);
   position: sticky;
   top: 0;
@@ -65,12 +65,13 @@ nav .navWrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  grid-gap: 2vw;
+  grid-gap: 4vw;
 }
 
 .navWrapper .links-container {
   display: flex;
   flex-flow: row wrap;
+  row-gap: 12px;
 }
 
 .author-name {
@@ -198,8 +199,6 @@ nav .button {
 .content-container {
   margin-bottom: 50px;
   padding-bottom: 25px;
-  max-width: 340px;
-  min-width: 340px;
   width: 340px;
   text-align: center;
   border-radius: 4px;
@@ -248,7 +247,6 @@ nav .button {
 }
 
 .gameImage {
-  height: 100%;
   width: 100%;
   border-radius: 5px;
 }
@@ -319,6 +317,12 @@ nav .button {
   background-color: var(--border-color);
 }
 
+@media screen and (max-width: 410px){
+  .content-container {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 540px){
   .navWrapper {
     justify-content: center;
@@ -328,10 +332,6 @@ nav .button {
 @media screen and (max-width: 950px) {
   .education-content {
     width: 450px;
-  }
-
-  .game-programming {
-    margin-left: 32px;
   }
 }
 
