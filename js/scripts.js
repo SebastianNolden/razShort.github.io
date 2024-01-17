@@ -6,7 +6,6 @@ var currentTheme = localStorage.getItem("theme");
 var userChoiseColorMode = prefersDarkScheme.matches ? "dark" : "light";
 
 
-
 /* --------- METHODS ------------- */
 // first visite on website
 if (currentTheme === null) {
@@ -25,4 +24,14 @@ darkmodeButton.addEventListener("click", function () {
     theme = "dark";
   }
   localStorage.setItem("theme", theme);
+});
+
+
+$(document).scroll(function () {
+  var y = document.documentElement.scrollTop;
+  if (y > 100){
+    $('#home').fadeIn();
+  } else {
+    $('#home').fadeOut();
+  }
 });

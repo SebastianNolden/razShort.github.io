@@ -1,10 +1,16 @@
 Vue.component('my-nav', {
   template:`
   <div class="navWrapper">
-    <a class="home button" href="index.html">Home</a>
-    <a class="github button" href="https://github.com/razShort/razShort.github.io">Github</a>
-    <a href="about_me.html" class="aboutme button">Über mich</a>
-    <a href="" class="darkmode button"><i class="uil uil-moon"></i></a>
+    <div class="name-container">
+      <div class="author-name">Sebastian Nolden</div>
+      <div class="job-title">Game Programmer</div>
+    </div>
+    <div class="links-container">
+      <a class="image-button" href="https://github.com/razShort/razShort.github.io"><i class="uil uil-github"></i></a>
+      <a class="image-button" href="https://www.linkedin.com/in/sebastian-nolden-93306129a/"><i class="uil uil-linkedin"></i></a>
+      <a class="button" target="_blank" href="resources/CV_Sebastian_Nolden_english.pdf">Resume</a>
+      <a class="darkmode button" href=""><i class="uil uil-moon"></i></a>
+    </div>
   </div>`
 });
 
