@@ -1,2 +1,2 @@
 # razShort.github.io
-This is my Game Developer Portfolio..
+This is my Game Programmer Portfolio..
