@@ -1,2 +1,2 @@
-# razShort.github.io
-Web Page for Projects
+# SebastianNolden.github.io
+Presentation of my game programmer portfolio.
